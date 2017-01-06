@@ -1,0 +1,3 @@
+if turtle <> nil then
+	shell.run("turtlesys/startup.lua")
+end
