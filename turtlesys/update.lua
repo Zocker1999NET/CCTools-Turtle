@@ -65,13 +65,6 @@ function getGithubContents( path )
 	return pType, pPath, pName
 end
 
--- Blacklist Function
-function isBlackListed( path )
-	if blackList:gmatch("@"..path)() ~= nil then
-		return true
-	end
-end
-
 -- Download Manager
 function downloadManager( path )
 	local fType, fPath, fName = getGithubContents( path )
@@ -82,7 +75,7 @@ function downloadManager( path )
 				fPath[i] = fPath[i].."/"..fName[i]
 			end
 			local path = fPath[i]
-			if not fileList.files[path] and not isBlackListed(fPath[i]) then
+			if not fileList.files[path] then
 				fileList.files[path] = {"https://raw.github.com/"..gUser.."/"..gRepo.."/"..gBranch.."/"..fPath[i],fName[i]}
 			end
 		end
