@@ -8,6 +8,7 @@
 
 local gUser, gRepo, gBranch = "Zocker1999NET", "CCTools-Turtle", "master"
 
+local title = "Github Repo Downloader"
 local fileList = {dirs={},files={}}
 local x , y = term.getSize()
 
