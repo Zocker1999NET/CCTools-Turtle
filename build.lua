@@ -39,7 +39,7 @@ local function selectItem()
 	while true do
 		for i = 1,16,1 do
 			local d = turtle.getItemDetail(i)
-			if d.name == item.name and d.damage == item.damage then
+			if d and d.name == item.name and d.damage == item.damage then
 				turtle.select(i)
 				return
 			end
